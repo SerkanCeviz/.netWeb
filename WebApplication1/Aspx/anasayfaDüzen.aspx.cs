@@ -11,7 +11,9 @@ namespace WebApplication1.Aspx
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DataSet1TableAdapters.Anasayfa1TableAdapter dt = new DataSet1TableAdapters.Anasayfa1TableAdapter();
+            Repeater1.DataSource = dt.getVeri();
+            Repeater1.DataBind();
         }
     }
 }

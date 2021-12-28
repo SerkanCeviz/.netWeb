@@ -44,12 +44,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -108,17 +116,23 @@
     <Content Include="About.aspx" />
     <Content Include="Aspx\admin.aspx" />
     <Content Include="Aspx\adminBilgisayar.aspx" />
-    <Content Include="Aspx\adminpaneli.aspx" />
+    <Content Include="Aspx\adminPanelGiris.aspx" />
     <Content Include="Aspx\anasayfaDüzen.aspx" />
+    <Content Include="Aspx\bilgisayarGüncelle.aspx" />
     <Content Include="Aspx\Computers.aspx" />
     <Content Include="Aspx\Excalibur.aspx" />
     <Content Include="Aspx\GS76.aspx" />
     <Content Include="Aspx\HtmlPage1.aspx" />
+    <Content Include="Aspx\kullanıcıGüncelle.aspx" />
     <Content Include="Aspx\kullanıcılar.aspx" />
     <Content Include="Aspx\lütfen.aspx" />
+    <Content Include="Aspx\mesajSil.aspx" />
+    <Content Include="Aspx\silmeSayfası.aspx" />
+    <Content Include="Aspx\üyeKayıt.aspx" />
     <Content Include="Aspx\üyeOl.aspx" />
     <Content Include="css\adminpaneli.css" />
     <Content Include="css\computer.css" />
+    <Content Include="css\styleAdmin.css" />
     <Content Include="html\Computers.html" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -157,6 +171,17 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Aspx\Zephyrus.aspx" />
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="html\GS76.html" />
     <Content Include="html\HtmlPage1.html" />
@@ -172,6 +197,7 @@
     <Content Include="images\asusFoto.jpg" />
     <Content Include="images\asusFotojpg.jpg" />
     <Content Include="images\asusRog.png" />
+    <Content Include="images\b4.jpg" />
     <Content Include="images\banner1.jpg" />
     <Content Include="images\banner2.jpg" />
     <Content Include="images\banner21.jpg" />
@@ -275,12 +301,12 @@
     <Compile Include="Aspx\adminBilgisayar.aspx.designer.cs">
       <DependentUpon>adminBilgisayar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Aspx\adminpaneli.aspx.cs">
-      <DependentUpon>adminpaneli.aspx</DependentUpon>
+    <Compile Include="Aspx\adminPanelGiris.aspx.cs">
+      <DependentUpon>adminPanelGiris.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Aspx\adminpaneli.aspx.designer.cs">
-      <DependentUpon>adminpaneli.aspx</DependentUpon>
+    <Compile Include="Aspx\adminPanelGiris.aspx.designer.cs">
+      <DependentUpon>adminPanelGiris.aspx</DependentUpon>
     </Compile>
     <Compile Include="Aspx\anasayfaDüzen.aspx.cs">
       <DependentUpon>anasayfaDüzen.aspx</DependentUpon>
@@ -288,6 +314,13 @@
     </Compile>
     <Compile Include="Aspx\anasayfaDüzen.aspx.designer.cs">
       <DependentUpon>anasayfaDüzen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aspx\bilgisayarGüncelle.aspx.cs">
+      <DependentUpon>bilgisayarGüncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\bilgisayarGüncelle.aspx.designer.cs">
+      <DependentUpon>bilgisayarGüncelle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Aspx\Computers.aspx.cs">
       <DependentUpon>Computers.aspx</DependentUpon>
@@ -303,6 +336,13 @@
     <Compile Include="Aspx\GS76.aspx.designer.cs">
       <DependentUpon>GS76.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Aspx\kullanıcıGüncelle.aspx.cs">
+      <DependentUpon>kullanıcıGüncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\kullanıcıGüncelle.aspx.designer.cs">
+      <DependentUpon>kullanıcıGüncelle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Aspx\kullanıcılar.aspx.cs">
       <DependentUpon>kullanıcılar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -317,6 +357,27 @@
     <Compile Include="Aspx\lütfen.aspx.designer.cs">
       <DependentUpon>lütfen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Aspx\mesajSil.aspx.cs">
+      <DependentUpon>mesajSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\mesajSil.aspx.designer.cs">
+      <DependentUpon>mesajSil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aspx\silmeSayfası.aspx.cs">
+      <DependentUpon>silmeSayfası.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\silmeSayfası.aspx.designer.cs">
+      <DependentUpon>silmeSayfası.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aspx\üyeKayıt.aspx.cs">
+      <DependentUpon>üyeKayıt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aspx\üyeKayıt.aspx.designer.cs">
+      <DependentUpon>üyeKayıt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Aspx\üyeOl.aspx.cs">
       <DependentUpon>üyeOl.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -330,6 +391,11 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -398,6 +464,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,24 +1,78 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="anasayfaDüzen.aspx.cs" Inherits="WebApplication1.Aspx.anasayfaDüzen" %>
-
 <!DOCTYPE html>
+<html>
+<head>
+    <title>AdminPaneli</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link rel="stylesheet" href="../css/adminpaneli.css">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: #111;
+                }
+        body{
+            background-color:aliceblue;
+        }
+    </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
+
+    <ul>
+        <li> <a href ="adminPanelGiris.aspx">Mesajlar</a></li>
+        <li><a href="adminBilgisayar.aspx">Bilgisayarlar</a></li>
+        <li><a href="kullanıcılar.aspx">Kullanıcılar</a></li>
+        <li><a href="anasayfaDüzen.aspx">Anasayfa Düzeni</a></li>
+    </ul>
+    <form runat="server">
+        <div style="margin-top: 15px">
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>veri</th>
+                    <th>Güncelle</th>
+                    
+                </tr>
+
+                <asp:Repeater ID="Repeater1" runat="server">
+                    <ItemTemplate>
+                        <tr>
+                            <td><%# Eval("id") %></td>
+                            <td><%# Eval("veri") %></td>
+                           
+                            
+                            <td>
+                                <asp:HyperLink ID="HyperLink1" NavigateUrl='<%# "kullanıcıGüncelle.aspx?id="+Eval("id") %>' CssClass="btn btn-success" runat="server">Güncelle</asp:HyperLink>
+                               
+                            </td>
+                           
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+
+
+            </table>
+
         </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="255px">
-            <Columns>
-                <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
-                <asp:BoundField DataField="veri" HeaderText="veri" SortExpression="veri" />
-            </Columns>
-        </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:databaseDemoConnectionString %>" SelectCommand="SELECT * FROM [Anasayfa]"></asp:SqlDataSource>
+
     </form>
+
 </body>
 </html>

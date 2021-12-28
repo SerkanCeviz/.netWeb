@@ -19,6 +19,7 @@
     <!-- bootstrap css -->
     
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+     <link rel="stylesheet" href="../css/computer.css">
     <!-- style css -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Responsive-->
@@ -75,7 +76,7 @@
                                             <a class="nav-link" href="#contact">İletişim</a>
                                         </li>
                                     </ul>
-                                    <div class="sign_btn"><a href="#">Üye Ol</a></div>
+                                    <div class="sign_btn"><a href="üyeKayıt.aspx">Üye Ol</a></div>
                                 </div>
                             </nav>
                         </div>
@@ -187,22 +188,24 @@
                     <div class="black_bg">
                         <div class="row">
                             <div class="col-md-7 ">
-                                <form class="main_form">
+                                <form class="main_form" runat="server">
                                     <div class="row">
                                         <div class="col-md-12 ">
-                                            <input class="contactus" placeholder="İsim" type="text" name="İsim">
+                                            <asp:TextBox ID="TextBox1" runat="server" placeholder="isim"></asp:TextBox>
+                                           
                                         </div>
                                         <div class="col-md-12">
-                                            <input class="contactus" placeholder="Telefon Numarası" type="text" name=" Telefon Numarası">
+                                            <asp:TextBox ID="TextBox2" runat="server" placeholder="telefon"></asp:TextBox>
                                         </div>
                                         <div class="col-md-12">
-                                            <input class="contactus" placeholder="Email" type="text" name="Email">
+                                            <asp:TextBox ID="TextBox3" runat="server" placeholder="mail"></asp:TextBox>
                                         </div>
                                         <div class="col-md-12">
-                                            <textarea class="textarea" placeholder="Mesaj" type="text" name="Mesaj "></textarea>
+                                            <asp:TextBox ID="TextBox4" runat="server" placeholder="Mesaj"></asp:TextBox>
+                                            
                                         </div>
                                         <div class="col-sm-12">
-                                            <button class="send_btn">Gönder</button>
+                                            <asp:Button ID="Button1" runat="server" Text="Gönder" BackColor="Aquamarine" OnClick="Button2_Click" />
                                         </div>
                                     </div>
                                 </form>
@@ -234,6 +237,7 @@
                         <h2><span class="offer"><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></span></h2>
                         
                         <p><asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></p>
+                        
                     </div>
                 </div>
             </div>
@@ -315,6 +319,7 @@
             </div>
         </div>
     </div>
+     
     <!-- end testimonial -->
     <!--  footer -->
     <!-- end footer -->

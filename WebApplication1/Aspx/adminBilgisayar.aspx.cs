@@ -11,28 +11,14 @@ namespace WebApplication1.Aspx
 {
     public partial class adminBilgisayar : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-J0H911T\SQLEXPRESS;Initial Catalog=databaseDemo;Integrated Security=True");
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (con.State == ConnectionState.Open)
-            {
-                con.Close();
-            }
-            con.Open();
-
+            DataSet1TableAdapters.computerTableAdapter dt = new DataSet1TableAdapters.computerTableAdapter();
+            Repeater1.DataSource = dt.getComputer();
+            Repeater1.DataBind();
         }
 
-        protected void Button1_Click1(object sender, EventArgs e)
-        {
-            SqlCommand gonder = con.CreateCommand();
-            gonder.CommandType = CommandType.Text;
-            gonder.CommandText = "update computer set price ='"+ TextBox3.Text+"' where id='"+TextBox1.Text+"'";
-            gonder.ExecuteNonQuery();
-
-
-            TextBox1.Text = "";
-            TextBox3.Text = "";
-            GridView1.DataBind();
-        }
+        
     }
 }

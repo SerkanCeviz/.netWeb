@@ -19,3 +19,30 @@ color:red;
     align-items: center;
     justify-content: space-between;
 }
+
+
+#TextBox1{
+    width:450px;
+    height:100px;
+}
+
+#TextBox2 {
+    width: 450px;
+    height: 100px;
+}
+
+#TextBox3 {
+    width: 450px;
+    height: 100px;
+}
+
+#TextBox4 {
+    width: 450px;
+    height: 250px;
+}
+#Button1{
+    width:150px;
+    height:75px;
+    align-content:flex-end;
+    justify-content:space-between;
+}

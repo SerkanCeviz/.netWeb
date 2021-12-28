@@ -21,7 +21,7 @@ namespace WebApplication1
                 if (TextBox2.Text == "admin1234")
                 {
                     Label1.Text = "Giriş Yapılıyor";
-                    Response.Redirect("adminpaneli.aspx");
+                    Response.Redirect("adminPanelGiris.aspx");
                 }
                 else
                 {

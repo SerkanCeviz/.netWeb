@@ -71,3 +71,7 @@ C:\Users\MONSTER\Desktop\.net Proje\WebApplication1\WebApplication1\obj\Debug\We
 C:\Users\MONSTER\Desktop\.net Proje\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 C:\Users\MONSTER\Desktop\.net Proje\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\MONSTER\Desktop\.net Proje\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\MONSTER\Desktop\.net Proje\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\MONSTER\Desktop\.net Proje\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\MONSTER\Desktop\.net Proje\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\MONSTER\Desktop\.net Proje\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
