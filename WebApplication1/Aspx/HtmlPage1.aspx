@@ -126,7 +126,7 @@
                 <div class="col-md-8 offset-md-2 ">
                     <div class="about_box ">
                         <figure><img src="../images/about_img.png" alt="#" /></figure>
-                        <a class="read_more" href="#about">Daha Fazlası İçin</a>
+                       
                     </div>
                 </div>
             </div>
